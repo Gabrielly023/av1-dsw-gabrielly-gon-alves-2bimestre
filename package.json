@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "batata": "node src/index.js",
-    "dev": "node src/server.js"
+    "dev": "np src/server.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "description": "",
   "dependencies": {
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }

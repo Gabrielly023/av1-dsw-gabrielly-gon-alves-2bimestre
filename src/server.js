@@ -13,6 +13,7 @@ app.get("/", (req, res) => {
 
 app.get("/tarefas", (req, res) => {
   const tarefas = obterTarefas();
+  console.log("TESTANDO");
   res.json(tarefas);
 });
 
@@ -26,6 +27,18 @@ app.post("/tarefas", (req, res) => {
   criarTarefa(descricao);
   console.log(`✓ Tarefa criada: "${descricao}"`);
   res.status(201).json({ mensagem: "Tarefa criada com sucesso!" });
+});
+
+app.patch("/tarefas/:id", (req, res) => {
+  const { id } = req.params.id;
+
+  const { descricao } = req.body;
+});
+
+app.delete("/tarefas/:id", (req, res) => {
+  const { id } = req.params.id;
+
+  tarefas.splice(id, 1);
 });
 
 app.listen(PORT, () => {
