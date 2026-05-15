@@ -16,15 +16,15 @@ const router = express.Router();
 // DEFINIÇÃO DAS ROTAS DE TAREFAS
 // ========================================
 
-/**
- * GET /tarefas - Lista todas as tarefas
- */
-router.get("/tasks", TarefaController.criarTaskPrisma);
+router.get("/tasks", TarefaController.listar);
 
-/**
- * DELETE /tarefas/:id - Remove uma tarefa
- */
-router.delete("/tasks/:id", TarefaController.excluirTaskPrisma);
+router.get("/tasks/:id", TarefaController.buscarPorId);
+
+router.post("/tasks", TarefaController.criar);
+
+router.put("/tasks/:id", TarefaController.atualizar);
+
+router.delete("/tasks/:id", TarefaController.excluir);
 
 // Exporta o roteador para ser usado no app principal
 export default router;
