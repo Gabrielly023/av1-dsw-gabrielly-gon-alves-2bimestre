@@ -1,5 +1,13 @@
 import Header from "./components/Header";
+import TarefasPage from "./pages/TarefasPage";
 
-export default function App() {
-  return <Header></Header>;
+function App() {
+  return (
+    <>
+      <Header />
+      <TarefasPage />
+    </>
+  );
 }
+
+export default App;

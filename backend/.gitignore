@@ -28,4 +28,4 @@ Thumbs.db
 # Build
 dist/
 build/
-/src/generated/prisma
+generated
