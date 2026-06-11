@@ -975,7 +975,7 @@ export namespace Prisma {
 
   export type TaskMinAggregateOutputType = {
     id: number | null
-    title: string | null
+    task: string | null
     description: string | null
     completed: boolean | null
     createdAt: Date | null
@@ -984,7 +984,7 @@ export namespace Prisma {
 
   export type TaskMaxAggregateOutputType = {
     id: number | null
-    title: string | null
+    task: string | null
     description: string | null
     completed: boolean | null
     createdAt: Date | null
@@ -993,7 +993,7 @@ export namespace Prisma {
 
   export type TaskCountAggregateOutputType = {
     id: number
-    title: number
+    task: number
     description: number
     completed: number
     createdAt: number
@@ -1014,7 +1014,7 @@ export namespace Prisma {
 
   export type TaskMinAggregateInputType = {
     id?: true
-    title?: true
+    task?: true
     description?: true
     completed?: true
     createdAt?: true
@@ -1023,7 +1023,7 @@ export namespace Prisma {
 
   export type TaskMaxAggregateInputType = {
     id?: true
-    title?: true
+    task?: true
     description?: true
     completed?: true
     createdAt?: true
@@ -1032,7 +1032,7 @@ export namespace Prisma {
 
   export type TaskCountAggregateInputType = {
     id?: true
-    title?: true
+    task?: true
     description?: true
     completed?: true
     createdAt?: true
@@ -1128,7 +1128,7 @@ export namespace Prisma {
 
   export type TaskGroupByOutputType = {
     id: number
-    title: string
+    task: string
     description: string | null
     completed: boolean
     createdAt: Date
@@ -1156,7 +1156,7 @@ export namespace Prisma {
 
   export type TaskSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    title?: boolean
+    task?: boolean
     description?: boolean
     completed?: boolean
     createdAt?: boolean
@@ -1167,7 +1167,7 @@ export namespace Prisma {
 
   export type TaskSelectScalar = {
     id?: boolean
-    title?: boolean
+    task?: boolean
     description?: boolean
     completed?: boolean
     createdAt?: boolean
@@ -1185,7 +1185,7 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      title: string
+      task: string
       description: string | null
       completed: boolean
       createdAt: Date
@@ -1561,7 +1561,7 @@ export namespace Prisma {
    */ 
   interface TaskFieldRefs {
     readonly id: FieldRef<"Task", 'Int'>
-    readonly title: FieldRef<"Task", 'String'>
+    readonly task: FieldRef<"Task", 'String'>
     readonly description: FieldRef<"Task", 'String'>
     readonly completed: FieldRef<"Task", 'Boolean'>
     readonly createdAt: FieldRef<"Task", 'DateTime'>
@@ -2812,7 +2812,7 @@ export namespace Prisma {
 
   export const TaskScalarFieldEnum: {
     id: 'id',
-    title: 'title',
+    task: 'task',
     description: 'description',
     completed: 'completed',
     createdAt: 'createdAt',
@@ -2894,7 +2894,7 @@ export namespace Prisma {
     OR?: TaskWhereInput[]
     NOT?: TaskWhereInput | TaskWhereInput[]
     id?: IntFilter<"Task"> | number
-    title?: StringFilter<"Task"> | string
+    task?: StringFilter<"Task"> | string
     description?: StringNullableFilter<"Task"> | string | null
     completed?: BoolFilter<"Task"> | boolean
     createdAt?: DateTimeFilter<"Task"> | Date | string
@@ -2904,7 +2904,7 @@ export namespace Prisma {
 
   export type TaskOrderByWithRelationInput = {
     id?: SortOrder
-    title?: SortOrder
+    task?: SortOrder
     description?: SortOrderInput | SortOrder
     completed?: SortOrder
     createdAt?: SortOrder
@@ -2917,7 +2917,7 @@ export namespace Prisma {
     AND?: TaskWhereInput | TaskWhereInput[]
     OR?: TaskWhereInput[]
     NOT?: TaskWhereInput | TaskWhereInput[]
-    title?: StringFilter<"Task"> | string
+    task?: StringFilter<"Task"> | string
     description?: StringNullableFilter<"Task"> | string | null
     completed?: BoolFilter<"Task"> | boolean
     createdAt?: DateTimeFilter<"Task"> | Date | string
@@ -2927,7 +2927,7 @@ export namespace Prisma {
 
   export type TaskOrderByWithAggregationInput = {
     id?: SortOrder
-    title?: SortOrder
+    task?: SortOrder
     description?: SortOrderInput | SortOrder
     completed?: SortOrder
     createdAt?: SortOrder
@@ -2944,7 +2944,7 @@ export namespace Prisma {
     OR?: TaskScalarWhereWithAggregatesInput[]
     NOT?: TaskScalarWhereWithAggregatesInput | TaskScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Task"> | number
-    title?: StringWithAggregatesFilter<"Task"> | string
+    task?: StringWithAggregatesFilter<"Task"> | string
     description?: StringNullableWithAggregatesFilter<"Task"> | string | null
     completed?: BoolWithAggregatesFilter<"Task"> | boolean
     createdAt?: DateTimeWithAggregatesFilter<"Task"> | Date | string
@@ -2994,7 +2994,7 @@ export namespace Prisma {
   }
 
   export type TaskCreateInput = {
-    title: string
+    task: string
     description?: string | null
     completed?: boolean
     createdAt?: Date | string
@@ -3003,7 +3003,7 @@ export namespace Prisma {
 
   export type TaskUncheckedCreateInput = {
     id?: number
-    title: string
+    task: string
     description?: string | null
     completed?: boolean
     createdAt?: Date | string
@@ -3011,7 +3011,7 @@ export namespace Prisma {
   }
 
   export type TaskUpdateInput = {
-    title?: StringFieldUpdateOperationsInput | string
+    task?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     completed?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3020,7 +3020,7 @@ export namespace Prisma {
 
   export type TaskUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
+    task?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     completed?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3029,7 +3029,7 @@ export namespace Prisma {
 
   export type TaskCreateManyInput = {
     id?: number
-    title: string
+    task: string
     description?: string | null
     completed?: boolean
     createdAt?: Date | string
@@ -3037,7 +3037,7 @@ export namespace Prisma {
   }
 
   export type TaskUpdateManyMutationInput = {
-    title?: StringFieldUpdateOperationsInput | string
+    task?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     completed?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3045,7 +3045,7 @@ export namespace Prisma {
 
   export type TaskUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
+    task?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     completed?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3166,7 +3166,7 @@ export namespace Prisma {
 
   export type TaskCountOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
+    task?: SortOrder
     description?: SortOrder
     completed?: SortOrder
     createdAt?: SortOrder
@@ -3180,7 +3180,7 @@ export namespace Prisma {
 
   export type TaskMaxOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
+    task?: SortOrder
     description?: SortOrder
     completed?: SortOrder
     createdAt?: SortOrder
@@ -3189,7 +3189,7 @@ export namespace Prisma {
 
   export type TaskMinOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
+    task?: SortOrder
     description?: SortOrder
     completed?: SortOrder
     createdAt?: SortOrder
@@ -3623,7 +3623,7 @@ export namespace Prisma {
   }
 
   export type TaskCreateWithoutCategoryInput = {
-    title: string
+    task: string
     description?: string | null
     completed?: boolean
     createdAt?: Date | string
@@ -3631,7 +3631,7 @@ export namespace Prisma {
 
   export type TaskUncheckedCreateWithoutCategoryInput = {
     id?: number
-    title: string
+    task: string
     description?: string | null
     completed?: boolean
     createdAt?: Date | string
@@ -3668,7 +3668,7 @@ export namespace Prisma {
     OR?: TaskScalarWhereInput[]
     NOT?: TaskScalarWhereInput | TaskScalarWhereInput[]
     id?: IntFilter<"Task"> | number
-    title?: StringFilter<"Task"> | string
+    task?: StringFilter<"Task"> | string
     description?: StringNullableFilter<"Task"> | string | null
     completed?: BoolFilter<"Task"> | boolean
     createdAt?: DateTimeFilter<"Task"> | Date | string
@@ -3677,14 +3677,14 @@ export namespace Prisma {
 
   export type TaskCreateManyCategoryInput = {
     id?: number
-    title: string
+    task: string
     description?: string | null
     completed?: boolean
     createdAt?: Date | string
   }
 
   export type TaskUpdateWithoutCategoryInput = {
-    title?: StringFieldUpdateOperationsInput | string
+    task?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     completed?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3692,7 +3692,7 @@ export namespace Prisma {
 
   export type TaskUncheckedUpdateWithoutCategoryInput = {
     id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
+    task?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     completed?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3700,7 +3700,7 @@ export namespace Prisma {
 
   export type TaskUncheckedUpdateManyWithoutCategoryInput = {
     id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
+    task?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     completed?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string

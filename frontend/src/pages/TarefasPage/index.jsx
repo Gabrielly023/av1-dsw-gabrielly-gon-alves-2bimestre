@@ -9,7 +9,8 @@ export default function TarefasPage() {
 
   async function buscarTarefas() {
     const resposta = await api.get("/tasks");
-    setTarefas(resposta.data);
+    const tasks = resposta.data?.tasks ?? resposta.data;
+    setTarefas(tasks);
   }
 
   async function cadastrarTarefa(event) {
@@ -21,11 +22,40 @@ export default function TarefasPage() {
     }
 
     await api.post("/tasks", {
-      title: descricao,
+      task: descricao,
     });
 
     setDescricao("");
     buscarTarefas();
+  }
+
+  async function deletarTarefa(id) {
+    if (confirm("Tem certeza que deseja deletar esta tarefa?")) {
+      try {
+        await api.delete(`/tasks/${id}`);
+        buscarTarefas();
+        alert("Tarefa deletada com sucesso!");
+      } catch (error) {
+        alert("Erro ao deletar tarefa");
+        console.error(error);
+      }
+    }
+  }
+
+  async function atualizarTarefa(id, tarefaAtual) {
+    const novaTarefa = prompt("Edite a tarefa:", tarefaAtual);
+    if (novaTarefa && novaTarefa.trim() !== "") {
+      try {
+        await api.put(`/tasks/${id}`, {
+          task: novaTarefa,
+        });
+        buscarTarefas();
+        alert("Tarefa atualizada com sucesso!");
+      } catch (error) {
+        alert("Erro ao atualizar tarefa");
+        console.error(error);
+      }
+    }
   }
 
   useEffect(() => {
@@ -51,7 +81,7 @@ export default function TarefasPage() {
           cadastrarTarefa={cadastrarTarefa}
         />
 
-        <TarefaTabela tarefas={tarefas} />
+        <TarefaTabela tarefas={tarefas} onDeletar={deletarTarefa} onAtualizar={atualizarTarefa} />
       </div>
     </section>
   );

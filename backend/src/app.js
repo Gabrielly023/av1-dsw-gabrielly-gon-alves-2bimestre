@@ -8,6 +8,7 @@
 // - Preparar a aplicação para ser exportada
 
 import express from "express";
+import cors from "cors";
 import tarefaRoutes from "./routes/tarefaRoutes.js";
 
 // Cria a aplicação Express
@@ -16,6 +17,9 @@ const app = express();
 // ========================================
 // MIDDLEWARES
 // ========================================
+
+// Habilita CORS para aceitar requisições do frontend
+app.use(cors());
 
 // Permite que o servidor entenda JSON enviado no corpo da requisição
 app.use(express.json());
@@ -32,7 +36,7 @@ app.get("/", (req, res) => {
   res.json({
     mensagem: "API de tarefas funcionando!",
     versao: "2.0",
-    arquitetura: "MVC"
+    arquitetura: "MVC",
   });
 });
 
@@ -48,7 +52,7 @@ app.use((req, res) => {
   res.status(404).json({
     erro: "Rota não encontrada",
     metodo: req.method,
-    url: req.url
+    url: req.url,
   });
 });
 

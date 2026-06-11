@@ -73,7 +73,7 @@ export async function listar(req, res) {
 
     return res.json({
       total: tasks.length,
-      tasks
+      tasks,
     });
   } catch (error) {
     console.error("Erro ao listar tasks:", error);
@@ -116,10 +116,10 @@ export async function buscarPorId(req, res) {
  */
 export async function criar(req, res) {
   try {
-    const { title, description, completed, categoryId } = req.body;
+    const { task, description, completed, categoryId } = req.body;
 
-    if (typeof title !== "string" || title.trim() === "") {
-      return res.status(400).json({ erro: "Título é obrigatório" });
+    if (typeof task !== "string" || task.trim() === "") {
+      return res.status(400).json({ erro: "Tarefa é obrigatória" });
     }
 
     validarTextoOpcional(description, "Descrição");
@@ -127,15 +127,15 @@ export async function criar(req, res) {
     validarCategoriaIdOpcional(categoryId);
 
     const taskCriada = await TarefaModel.criar({
-      title,
+      task,
       description,
       completed,
-      categoryId
+      categoryId,
     });
 
     return res.status(201).json({
       mensagem: "Task criada com sucesso!",
-      task: taskCriada
+      task: taskCriada,
     });
   } catch (error) {
     console.error("Erro ao criar task:", error);
@@ -157,21 +157,26 @@ export async function atualizar(req, res) {
       return res.status(400).json({ erro: "ID inválido" });
     }
 
-    const { title, description, completed, categoryId } = req.body;
+    const { task, description, completed, categoryId } = req.body;
 
     if (
-      title === undefined &&
+      task === undefined &&
       description === undefined &&
       completed === undefined &&
       categoryId === undefined
     ) {
       return res.status(400).json({
-        erro: "Envie ao menos um campo para atualização"
+        erro: "Envie ao menos um campo para atualização",
       });
     }
 
-    if (title !== undefined && (typeof title !== "string" || title.trim() === "")) {
-      return res.status(400).json({ erro: "Título deve ser uma string não vazia" });
+    if (
+      task !== undefined &&
+      (typeof task !== "string" || task.trim() === "")
+    ) {
+      return res
+        .status(400)
+        .json({ erro: "Tarefa deve ser uma string não vazia" });
     }
 
     validarTextoOpcional(description, "Descrição");
@@ -179,10 +184,10 @@ export async function atualizar(req, res) {
     validarCategoriaIdOpcional(categoryId);
 
     const taskAtualizada = await TarefaModel.atualizar(idNumero, {
-      title,
+      task,
       description,
       completed,
-      categoryId
+      categoryId,
     });
 
     if (!taskAtualizada) {
@@ -191,7 +196,7 @@ export async function atualizar(req, res) {
 
     return res.json({
       mensagem: "Task atualizada com sucesso!",
-      task: taskAtualizada
+      task: taskAtualizada,
     });
   } catch (error) {
     console.error("Erro ao atualizar task:", error);
@@ -221,7 +226,7 @@ export async function excluir(req, res) {
 
     return res.json({
       mensagem: "Task excluída com sucesso!",
-      task: taskRemovida
+      task: taskRemovida,
     });
   } catch (error) {
     console.error("Erro ao excluir task:", error);
