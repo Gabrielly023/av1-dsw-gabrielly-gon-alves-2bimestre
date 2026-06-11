@@ -130,7 +130,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\gabrielly_goncalves\\web-gaby\\api-base-2bimestre\\backend\\generated\\prisma",
+      "value": "C:\\Users\\gabrielly_goncalves\\Nova pasta\\av1-dsw-gabrielly-gon-alves-2bimestre\\backend\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -144,12 +144,11 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\gabrielly_goncalves\\web-gaby\\api-base-2bimestre\\backend\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\gabrielly_goncalves\\Nova pasta\\av1-dsw-gabrielly-gon-alves-2bimestre\\backend\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../../prisma",
   "clientVersion": "5.22.0",
@@ -158,7 +157,7 @@ const config = {
     "db"
   ],
   "activeProvider": "mysql",
-  "postinstall": false,
+  "postinstall": true,
   "inlineDatasources": {
     "db": {
       "url": {
